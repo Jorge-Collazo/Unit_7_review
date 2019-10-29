@@ -4,8 +4,8 @@
    Tutorial 5
    Review Assignment
    
-   Author:   
-   Date:     
+   Author:   Jorge Collazo
+   Date:     10-29-19
       
    Filename: tf_styles4.css
 
@@ -23,9 +23,25 @@
 
 /* General Flex Styles */
 
+body{
+   -webkit-flex: row wrap;
+   flex: row wrap;
+}
 
+section#left{
+   -webkit-flex: ;
+   flex: 1 8 130px;
+}
 
+section#right{
+   -webkit-flex: ;
+   flex: 8 1 351px;
+}
 
+section.tips > article, aside {
+   -webkit-flex:;
+   flex
+}
 
 
 /* ===============================
