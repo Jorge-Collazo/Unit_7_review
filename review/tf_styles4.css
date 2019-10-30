@@ -24,23 +24,27 @@
 /* General Flex Styles */
 
 body{
-   -webkit-flex: row wrap;
-   flex: row wrap;
+   display:flex;
+   display:-webkit-flex;
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
 }
 
 section#left{
-   -webkit-flex: ;
+   -webkit-flex: 1 8 130px;
    flex: 1 8 130px;
 }
 
 section#right{
-   -webkit-flex: ;
+   -webkit-flex: 8 1 351px;
    flex: 8 1 351px;
 }
 
-section.tips > article, aside {
-   -webkit-flex:row wrap;
-   flex: row wrap;
+section#tips{
+   -webkit-flex-flow:row wrap;
+   flex-flow: row wrap;
+   display: -webkit-flex;
+   display: flex;
 }
 
 article{
@@ -53,9 +57,11 @@ aside{
    flex: 1 2 250px; 
 }
 
-ul nav.horizontal{
-   -webkitflex: orientation wrap;
-   flex: orientation wrap;
+nav.horizontal ul{
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-flow: column wrap;
+   flex-flow: column wrap;
 }
 
 
@@ -64,7 +70,32 @@ ul nav.horizontal{
    ===============================
 */
 	
-
+@media only screen and (max-width: 480px){
+   nav.vertical ul{
+      display: -webkit-flex;
+      display: flex;
+      height:240px; 
+      -webkit-flex-flow: column wrap;
+      flex-flow: column wrap;
+   }
+   section#left{
+      -webkit-order: 99;
+      order: 99;
+   }
+   footer{
+      -webkit-order:100;
+      order:100;
+   }
+   a#navicon{
+      display: block;
+   }
+   nav.horizontal ul{
+      display: none;
+   }
+   a#navicon:hover+ul, nav.horizontal ul:hover{
+      display: block;
+   }
+}
 
 
 
@@ -73,5 +104,9 @@ ul nav.horizontal{
    ============================================
 */
 
-
+@media only screen and (min-width: 481px){
+   nav.horizontal ul{
+      height: 160px;
+   }
+}
 
